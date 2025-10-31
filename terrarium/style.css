@@ -1,0 +1,137 @@
+/* 제목 */
+h1 {
+    color: black;
+    text-align: center;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    font-size: 2rem;
+    margin: 0;
+}
+
+/* 전체 레이아웃 */
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    text-align: center;
+    background-color: #f6f6f6;
+}
+
+/* 좌우 식물 영역 */
+.container {
+    background-color: #eee;
+    width: 15%;
+    height: 100%;
+    padding: 10px;
+    position: absolute;
+    top :0px
+}
+
+/* 왼쪽 컨테이너는 왼쪽 정렬, 오른쪽은 오른쪽 정렬 */
+#left-container {
+    left : 0px;
+}
+
+#right-container {
+    right : 0px
+}
+
+/* 테라리움 영역 중앙 배치 */
+#terrarium {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    margin: 0 auto;
+}
+
+/* 병 구조 */
+.jar-walls {
+    height: 80%;
+    width: 60%;
+    background: #d1e1df;
+    border-radius: 1rem;
+    position: absolute;
+    bottom: 0.5%;
+    left: 20%;
+    opacity: 0.5;
+    z-index: 1;
+}
+
+.jar-top {
+    width: 50%;
+    height: 5%;
+    background: #d1e1df;
+    position: absolute;
+    bottom: 80.5%;
+    left: 25%;
+    opacity: 0.7;
+    z-index: 1;
+}
+
+.jar-bottom {
+    width: 50%;
+    height: 1%;
+    background: #d1e1df;
+    position: absolute;
+    bottom: 0%;
+    left: 25%;
+    opacity: 0.7;
+}
+
+.dirt {
+    width: 60%;
+    height: 5%;
+    background: #3a241d;
+    position: absolute;
+    border-radius: 0 0 1rem 1rem;
+    bottom: 1%;
+    left: 20%;
+    opacity: 0.7;
+    z-index: -1;
+}
+
+/* 반사광 (길고 짧은 것 둘 다 보이게) */
+.jar-glossy-long {
+    position: absolute;
+    width: 7%;
+    height: 30%;
+    background: rgba(255, 255, 255, 0.45);
+    top: 30%;
+    left: 15%;
+    border-radius: 50px;
+    filter: blur(2px);
+    z-index: 3;
+}
+
+.jar-glossy-short {
+    position: absolute;
+    width: 7%;
+    height: 15%;
+    background: rgba(255, 255, 255, 0.35);
+    top: 65%;
+    left: 15%;
+    border-radius: 50px;
+    filter: blur(1.5px);
+    z-index: 3;
+}
+
+/* 식물 이미지 정렬 */
+.plant-holder {
+    position: relative;
+    height: 13%;
+    left: -10px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.plant {
+    position: absolute;
+    max-width: 100px;
+    max-height: 100px;
+    cursor: grab;
+    z-index: 2;
+}
+
