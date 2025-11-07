@@ -1,0 +1,133 @@
+
+body {
+    font-family: 'Malgun Gothic', sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+.container {
+    max-width: 287px;
+    max-height: 520px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 25px 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.container img {
+    width: 105%;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+h1, h2 {
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+h1 {
+    font-size: 22px;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+.form-data {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.form-data label {
+    font-weight: bold;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.form-data input[type="text"] {
+    padding: 10px;
+    border: none;                
+    border-radius: 6px;
+    font-size: 14px;
+    width: 60%;
+    margin-left: auto;    /* 좌우 자동 */
+    margin-right: auto;
+    display: block;       /* 중앙 정렬 적용 */
+    background-color: #f0f0f0;  
+}
+
+
+.form-data input[type="text"]:focus {
+    width: 60%;
+    outline: none;               /* 포커스 테두리 제거 */
+    background-color: #e8f0fe;   /* 포커스 시 살짝 다른 색 */
+}
+
+/* 부모 컨테이너 */
+.button-container {
+    text-align: center; 
+}
+
+/* 버튼 스타일 */
+button.search-btn,
+button.clear-btn {
+    padding: 10px;
+    background-color: #4a90e2;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    margin: 10px auto; /* 상하 10px, 좌우 자동 */
+    width: 70px;
+    display: block;    /* margin auto 적용 위해 block */
+}
+
+/* hover */
+button.search-btn:hover,
+button.clear-btn:hover {
+    background-color: #357abd;
+}
+
+
+.result {
+    margin-top: 20px;
+}
+
+.result .loading {
+    font-style: italic;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.result .errors {
+    color: red;
+    margin-bottom: 10px;
+}
+
+.result-container p {
+    margin-bottom: 8px;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #1e1e1e;
+        color: #eee;
+    }
+    .container {
+        background-color: #2a2a2a;
+    }
+    input[type="text"] {
+        background-color: #333;
+        border-color: #555;
+        color: #fff;
+    }
+    input[type="text"]:focus {
+        border-color: #4a90e2;
+    }
+    h2 {
+        color: #ccc;
+    }
+}
