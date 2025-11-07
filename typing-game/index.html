@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Typing Game</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div id="game-container">
+        <h1>Typing Game!</h1>
+        <p>Practice your typing skills with a quote from Sherlock Holmes. Click <strong>Start</strong> to begin!</p>
+        <!-- 문장 박스 -->
+        <div id="quote-box">
+            <p id="quote"></p>
+        </div>
+        <p id="message"></p>
+        <div>
+            <input type="text" aria-label="current word" id="typed-value" />
+            <button type="button" id="start">Start</button>
+        </div>
+    </div>
+
+    <!-- 모달창 -->
+    <div id="resultModal" class="modal">
+        <div class="modal-content">
+            <h2>🎉 게임 종료!</h2>
+            <p>당신의 기록: <span id="finalTime"></span>초</p>
+            <p>최고 기록: <span id="bestTime"></span>초</p>
+            <button id="restartBtn">다시하기</button>
+            <button id="mainBtn">메인 화면으로</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
