@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Message</title>
+</head>
+<body>
+  <div id="intro"></div>
+  <script>
+    function getMessage(name) {
+    return `Hello, ${name}...`;
+    } 
+
+    function getHobby() {
+    return `저는 코딩과 음악을 좋아합니다.`;
+    }
+
+    function getDream() {
+    return `제 꿈은 훌륭한 개발자가 되는 것입니다`;
+    }
+
+    const messages = [getMessage("Ornella"), getHobby(), getDream()];
+
+    let index = 0;
+    const introDiv = document.getElementById("intro");
+
+    introDiv.innerHTML = messages[index];
+    
+    setInterval(() => {
+      index = (index + 1) % messages.length; // 순환
+      introDiv.innerHTML = messages[index];
+    }, 3000);
+
+  </script>
+</body>
+</html>

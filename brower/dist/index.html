@@ -1,38 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>My Carbon Trigger</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Carbon Trigger</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      width: 400px;
+      height: 600px;
+      margin: 0 auto;
+      font-family: "Poppins", sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: #f8f8f8;
+    }
+
+    .container {
+      text-align: center;
+      width: 90%;
+    }
+
+    .top-image {
+      width: 200px;
+      margin-bottom: 1rem;
+    }
+
+    .form-data label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    .form-data input {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .search-btn, .clear-btn {
+      margin-top: 15px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      background-color: #2AA364;
+      color: white;
+      cursor: pointer;
+    }
+
+    .clear-btn {
+      background-color: #888;
+    }
+
+    .errors {
+      color: red;
+      font-size: 0.9em;
+      margin-top: 10px;
+    }
+
+    .loading {
+      display: none;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .result-container {
+      display: none;
+    }
+  </style>
 </head>
+
 <body>
-<div class="container">
+  <div class="container">
     <img src="images/plants-people.png" alt="plants and people" class="top-image">
 
-    <!-- 초기 화면: 입력 폼 -->
     <div class="form-screen">
-        <h1>Welcome to Your Personal Carbon Trigger!</h1>
-        <h2>New? Add your Information</h2>
-        <form class="form-data">
-            <label for="region">Region Name</label>
-            <input type="text" id="region" required class="region-name">
-            <label for="api">Your API Key from tmrow</label>
-            <input type="text" id="api" required class="api-key">
-            <button class="search-btn" type="submit">Submit</button>
-        </form>
+      <h1>Welcome to Your Personal Carbon Trigger!</h1>
+      <h2>New? Add your Information</h2>
+      <form class="form-data">
+        <label for="region">Region Name</label>
+        <input type="text" id="region" required class="region-name" placeholder="e.g. KR, DE, US-CA">
+
+        <label for="api">Your API Key from tmrow</label>
+        <input type="text" id="api" required class="api-key" placeholder="Your API key">
+
+        <button class="search-btn" type="submit" id="submit-btn">Submit</button>
+      </form>
+      <p class="errors"></p>
+      <div class="loading">Loading...</div>
     </div>
 
-    <!-- 결과 화면: 제출 후 -->
-    <div class="result-screen" style="display:none;">
-        <h1>Welcome to Your Personal Carbon Trigger!</h1>
-        <p><strong>Region:</strong> <span class="my-region"></span></p>
-        <p><strong>Carbon Usage:</strong> <span class="carbon-usage"></span></p>
-        <p><strong>Fossil Fuel Percentage:</strong> <span class="fossil-fuel"></span></p>
-        <button class="clear-btn">Change region</button>
+    <div class="result-container">
+      <p><strong>Region:</strong> <span class="my-region"></span></p>
+      <p><strong>Carbon Usage:</strong> <span class="carbon-usage"></span></p>
+      <p><strong>Fossil Fuel Percentage:</strong> <span class="fossil-fuel"></span></p>
+      <button class="clear-btn">Change region</button>
     </div>
-</div>
+  </div>
 
-<script src="script.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>
